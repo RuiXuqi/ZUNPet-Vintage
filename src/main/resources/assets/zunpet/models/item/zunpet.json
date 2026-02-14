@@ -2,7 +2,7 @@
 	"credit": "Made by Arrokoth233",
 	"parent": "minecraft:item/handheld",
 	"textures": {
-		"layer0": "zunpet:item/zunpet"
+		"layer0": "zunpet:items/zunpet"
 	},
 	"display": {
 		"thirdperson_righthand": {

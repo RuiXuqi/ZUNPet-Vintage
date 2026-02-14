@@ -7,10 +7,12 @@
     ],
     "key": {
         "C": {
-            "item": "minecraft:copper_ingot"
+            "type": "forge:ore_dict",
+            "ore": "ingotCopper"
         },
         "G": {
-            "item": "minecraft:gold_ingot"
+            "type": "forge:ore_dict",
+            "ore": "ingotGold"
         }
     },
     "result": {
