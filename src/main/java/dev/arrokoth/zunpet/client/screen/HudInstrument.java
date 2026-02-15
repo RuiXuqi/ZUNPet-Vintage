@@ -1,6 +1,7 @@
 package dev.arrokoth.zunpet.client.screen;
 
-import dev.arrokoth.zunpet.Tags;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import dev.arrokoth.zunpet.Zunpet;
 import dev.arrokoth.zunpet.item.AbstractItemInstrument;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -9,31 +10,27 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
 
 /**
  * @author Arrokoth
  * @project Zunpet
  * @copyright Copyright © 2025 Arrokoth All Rights Reserved.
  */
-@Mod.EventBusSubscriber(modid = Tags.MOD_ID, value = Side.CLIENT)
 public class HudInstrument {
-    private static final ResourceLocation NAME_BG = new ResourceLocation(Tags.MOD_ID, "textures/hud/name_bg.png");
-    private static final ResourceLocation BAR_TEXTURE = new ResourceLocation(Tags.MOD_ID, "textures/hud/bar.png");
-    private static final ResourceLocation POINTER_TEXTURE = new ResourceLocation(Tags.MOD_ID, "textures/hud/pointer.png");
+    private static final ResourceLocation NAME_BG = new ResourceLocation(Zunpet.MOD_ID, "textures/hud/name_bg.png");
+    private static final ResourceLocation BAR_TEXTURE = new ResourceLocation(Zunpet.MOD_ID, "textures/hud/bar.png");
+    private static final ResourceLocation POINTER_TEXTURE = new ResourceLocation(Zunpet.MOD_ID, "textures/hud/pointer.png");
 
     private static final String[] NOTE_NAMES = {"C", "D", "E", "F", "G", "A", "H"};
 
     @SubscribeEvent
-    public static void onRenderGameOverlay(RenderGameOverlayEvent.Post event) {
+    public void onRenderGameOverlay(RenderGameOverlayEvent.Post event) {
         final Minecraft mc = Minecraft.getMinecraft();
-        mc.profiler.startSection("instrument");
-        EntityPlayerSP player = mc.player;
-        if (player != null && player.getHeldItemMainhand().getItem() instanceof AbstractItemInstrument) {
+        mc.mcProfiler.startSection("instrument");
+        EntityPlayerSP player = mc.thePlayer;
+        if (player != null && player.getHeldItem() != null && player.getHeldItem().getItem() instanceof AbstractItemInstrument) {
             final FontRenderer textRenderer = mc.fontRenderer;
-            final ScaledResolution window = new ScaledResolution(mc);
+            final ScaledResolution window = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 
             float var0 = Math.abs(player.prevRotationPitch / 90f * 7f);
             if (player.prevRotationPitch > 0) {
@@ -43,7 +40,7 @@ public class HudInstrument {
 
             // 渲染名称背景
             mc.getTextureManager().bindTexture(NAME_BG);
-            Gui.drawModalRectWithCustomSizedTexture(
+            Gui.func_146110_a(
                     (int) (window.getScaledWidth() / 1.5f - 4),
                     window.getScaledHeight() / 2 - 8,
                     0, 0, 16, 16, 16, 16
@@ -60,7 +57,7 @@ public class HudInstrument {
 
             // 渲染条形背景
             mc.getTextureManager().bindTexture(BAR_TEXTURE);
-            Gui.drawModalRectWithCustomSizedTexture(
+            Gui.func_146110_a(
                     (int) (window.getScaledWidth() / 1.5f + 6),
                     window.getScaledHeight() / 2 - 32,
                     0, 0, 16, 64, 16, 64
@@ -69,12 +66,12 @@ public class HudInstrument {
             // 渲染指针
             mc.getTextureManager().bindTexture(POINTER_TEXTURE);
             float accurate = (var0 + 0.5f) - ((int) (var0 + 0.5f));
-            Gui.drawModalRectWithCustomSizedTexture(
+            Gui.func_146110_a(
                     (int) (window.getScaledWidth() / 1.5f + 6),
                     window.getScaledHeight() / 2 - 32 + ((int) (60 * accurate)),
                     0, 0, 16, 5, 16, 5
             );
         }
-        mc.profiler.endSection();
+        mc.mcProfiler.endSection();
     }
 }

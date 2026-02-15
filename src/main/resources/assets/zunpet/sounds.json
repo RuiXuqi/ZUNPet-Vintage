@@ -1,5 +1,6 @@
 {
   "zunpet": {
+    "category": "player",
     "sounds": [
       "zunpet:zunpet"
     ]
