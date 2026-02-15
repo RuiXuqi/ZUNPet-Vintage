@@ -1,7 +1,7 @@
 package dev.arrokoth.zunpet.client.screen;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import dev.arrokoth.zunpet.Zunpet;
+import dev.arrokoth.zunpet.ZUNPet;
 import dev.arrokoth.zunpet.item.AbstractItemInstrument;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -17,9 +17,9 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
  * @copyright Copyright © 2025 Arrokoth All Rights Reserved.
  */
 public class HudInstrument {
-    private static final ResourceLocation NAME_BG = new ResourceLocation(Zunpet.MOD_ID, "textures/hud/name_bg.png");
-    private static final ResourceLocation BAR_TEXTURE = new ResourceLocation(Zunpet.MOD_ID, "textures/hud/bar.png");
-    private static final ResourceLocation POINTER_TEXTURE = new ResourceLocation(Zunpet.MOD_ID, "textures/hud/pointer.png");
+    private static final ResourceLocation NAME_BG = new ResourceLocation(ZUNPet.MOD_ID, "textures/hud/name_bg.png");
+    private static final ResourceLocation BAR_TEXTURE = new ResourceLocation(ZUNPet.MOD_ID, "textures/hud/bar.png");
+    private static final ResourceLocation POINTER_TEXTURE = new ResourceLocation(ZUNPet.MOD_ID, "textures/hud/pointer.png");
 
     private static final String[] NOTE_NAMES = {"C", "D", "E", "F", "G", "A", "H"};
 
@@ -32,8 +32,8 @@ public class HudInstrument {
             final FontRenderer textRenderer = mc.fontRenderer;
             final ScaledResolution window = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 
-            float var0 = Math.abs(player.prevRotationPitch / 90f * 7f);
-            if (player.prevRotationPitch > 0) {
+            float var0 = Math.abs(player.rotationPitch / 90f * 7f);
+            if (player.rotationPitch > 0) {
                 var0 = 7 - var0;
             }
             String name = NOTE_NAMES[(int) (Math.abs(var0 + 0.5f) % 7)];

@@ -1,14 +1,16 @@
 // TODO
 //package dev.arrokoth.zunpet.client;
 //
+//import dev.arrokoth.zunpet.registry.ZUNPetItems;
 //import net.minecraft.client.renderer.ItemRenderer;
 //import net.minecraft.client.renderer.Tessellator;
 //import net.minecraft.item.ItemStack;
 //import net.minecraft.util.IIcon;
 //import net.minecraftforge.client.IItemRenderer;
+//import net.minecraftforge.client.MinecraftForgeClient;
 //import org.lwjgl.opengl.GL11;
 //
-//public class ZunpetRenderer implements IItemRenderer {
+//public class ZUNPetRenderer implements IItemRenderer {
 //    @Override
 //    public boolean handleRenderType(ItemStack item, ItemRenderType type) {
 //        return type == ItemRenderType.EQUIPPED || type == ItemRenderType.EQUIPPED_FIRST_PERSON;
@@ -38,6 +40,6 @@
 //    }
 //
 //    public static void register() {
-//        MinecraftForgeClient.registerItemRenderer(ZunpetItems.ZUN_PET_ITEM, new ZunpetRenderer());
+//        MinecraftForgeClient.registerItemRenderer(ZUNPetItems.ZUN_PET_ITEM, new ZUNPetRenderer());
 //    }
 //}

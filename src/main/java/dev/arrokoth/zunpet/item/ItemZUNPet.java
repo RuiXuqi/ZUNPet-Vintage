@@ -1,6 +1,6 @@
 package dev.arrokoth.zunpet.item;
 
-import dev.arrokoth.zunpet.Zunpet;
+import dev.arrokoth.zunpet.ZUNPet;
 import net.minecraft.creativetab.CreativeTabs;
 
 /**
@@ -8,15 +8,15 @@ import net.minecraft.creativetab.CreativeTabs;
  * @project Zunpet
  * @copyright Copyright © 2025 Arrokoth All Rights Reserved.
  */
-public class ItemZunpet extends AbstractItemInstrument {
-    private static final String ZUNPET_SOUND = Zunpet.MOD_ID + ":zunpet";
+public class ItemZUNPet extends AbstractItemInstrument {
+    private static final String ZUNPET_SOUND = ZUNPet.MOD_ID + ":zunpet";
 
-    public ItemZunpet() {
+    public ItemZUNPet() {
         super();
         this.setMaxStackSize(1);
         this.setCreativeTab(CreativeTabs.tabCombat);
-        this.setUnlocalizedName(Zunpet.MOD_ID + ".zunpet");
-        this.setTextureName(Zunpet.MOD_ID + ":zunpet");
+        this.setUnlocalizedName(ZUNPet.MOD_ID + ".zunpet");
+        this.setTextureName(ZUNPet.MOD_ID + ":zunpet");
         this.setFull3D();
     }
 
