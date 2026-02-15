@@ -35,8 +35,8 @@ public class HudInstrument {
             final FontRenderer textRenderer = mc.fontRenderer;
             final ScaledResolution window = new ScaledResolution(mc);
 
-            float var0 = Math.abs(player.prevRotationPitch / 90f * 7f);
-            if (player.prevRotationPitch > 0) {
+            float var0 = Math.abs(player.rotationPitch / 90f * 7f);
+            if (player.rotationPitch > 0) {
                 var0 = 7 - var0;
             }
             String name = NOTE_NAMES[(int) (Math.abs(var0 + 0.5f) % 7)];

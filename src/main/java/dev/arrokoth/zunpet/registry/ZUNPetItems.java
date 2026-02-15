@@ -1,7 +1,7 @@
 package dev.arrokoth.zunpet.registry;
 
 import dev.arrokoth.zunpet.Tags;
-import dev.arrokoth.zunpet.item.ItemZunpet;
+import dev.arrokoth.zunpet.item.ItemZUNPet;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -13,8 +13,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod.EventBusSubscriber(modid = Tags.MOD_ID)
-public class ZunpetItems {
-    public static final Item ZUN_PET_ITEM = new ItemZunpet();
+public class ZUNPetItems {
+    public static final Item ZUN_PET_ITEM = new ItemZUNPet();
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {

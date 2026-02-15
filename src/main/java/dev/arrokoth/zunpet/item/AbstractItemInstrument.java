@@ -51,9 +51,9 @@ public abstract class AbstractItemInstrument extends Item {
     }
 
     public void playSound(World level, EntityPlayer player) {
-        float pitch = Math.abs(player.prevRotationPitch / 90f) + 1;
+        float pitch = Math.abs(player.rotationPitch / 90f) + 1;
 
-        if (player.prevRotationPitch > 0) {
+        if (player.rotationPitch > 0) {
             pitch = (1 - pitch + 1) / 2f + 0.5f;
         }
 

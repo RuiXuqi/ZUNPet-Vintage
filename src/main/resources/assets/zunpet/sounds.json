@@ -1,5 +1,7 @@
 {
   "zunpet": {
+    "category": "player",
+    "subtitle": "subtitles.zunpet.zunpet",
     "sounds": [
       "zunpet:zunpet"
     ]

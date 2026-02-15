@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber(modid = Tags.MOD_ID)
-public class ZunpetSoundEvents {
+public class ZUNPetSoundEvents {
     public static SoundEvent ZUNPET_SOUND;
 
     static {

@@ -1,7 +1,7 @@
 package dev.arrokoth.zunpet.item;
 
 import dev.arrokoth.zunpet.Tags;
-import dev.arrokoth.zunpet.registry.ZunpetSoundEvents;
+import dev.arrokoth.zunpet.registry.ZUNPetSoundEvents;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.SoundEvent;
 
@@ -10,8 +10,8 @@ import net.minecraft.util.SoundEvent;
  * @project Zunpet
  * @copyright Copyright © 2025 Arrokoth All Rights Reserved.
  */
-public class ItemZunpet extends AbstractItemInstrument {
-    public ItemZunpet() {
+public class ItemZUNPet extends AbstractItemInstrument {
+    public ItemZUNPet() {
         super();
         this.setMaxStackSize(1);
         this.setCreativeTab(CreativeTabs.COMBAT);
@@ -21,6 +21,6 @@ public class ItemZunpet extends AbstractItemInstrument {
 
     @Override
     public SoundEvent getSound() {
-        return ZunpetSoundEvents.ZUNPET_SOUND;
+        return ZUNPetSoundEvents.ZUNPET_SOUND;
     }
 }
